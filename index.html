@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Hobby Facts</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f0eafc, #c9d6ff);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #5a5a5a;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            line-height: 1.5;
+            color: #444;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            background-color: #6a5acd;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #5a4db1;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Hobby Facts</h1>
+        <p id="fact"></p>
+        <button id="newFactButton">Get a New Fact</button>
+    </div>
+    <script>
+        const facts = [
+            {
+                "fact": "Hobbies Boost Mental Health",
+                "description": "Engaging in hobbies can reduce stress, anxiety, and depression. Activities like painting, gardening, or playing a musical instrument can provide a sense of accomplishment and joy."
+            },
+            {
+                "fact": "The Most Popular Hobby",
+                "description": "According to surveys, reading is one of the most popular hobbies worldwide. It not only entertains but also improves vocabulary and cognitive function."
+            },
+            {
+                "fact": "Hobbies Can Be Profitable",
+                "description": "Many people turn their hobbies into side businesses. For example, crafting, photography, and blogging can generate income if pursued passionately."
+            },
+            {
+                "fact": "Hobbies Promote Social Connections",
+                "description": "Joining clubs or groups related to your hobby can help you meet new people and build friendships. Whether it's a book club, a sports team, or a crafting group, shared interests foster connections."
+            },
+            {
+                "fact": "Hobbies Can Improve Skills",
+                "description": "Many hobbies, such as cooking, coding, or playing an instrument, can enhance your skills and even translate into career opportunities."
+            },
+            {
+                "fact": "The Science of Hobbies",
+                "description": "Studies show that engaging in hobbies can lead to increased happiness and life satisfaction. They provide a sense of purpose and can help individuals feel more fulfilled."
+            },
+            {
+                "fact": "Hobbies Are Diverse",
+                "description": "There are countless hobbies out there, ranging from traditional ones like knitting and fishing to modern ones like gaming and blogging. This diversity means there's something for everyone!"
+            },
+            {
+                "fact": "Hobbies Can Be Therapeutic",
+                "description": "Art therapy, music therapy, and other hobby-related therapies are used to help individuals cope with trauma, stress, and mental health issues."
+            },
+            {
+                "fact": "Historical Hobbies",
+                "description": "Many hobbies have historical significance. For example, gardening has been practiced for thousands of years and was essential for survival before modern agriculture."
+            },
+            {
+                "fact": "Hobbies Can Be Lifelong",
+                "description": "Many people maintain hobbies throughout their lives, often picking up new ones as they age. This lifelong engagement can contribute to a sense of purpose and vitality."
+            }
+        ];
+
+        document.getElementById('newFactButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const randomFact = facts[randomIndex];
+            document.getElementById('fact').innerText = `${randomFact.fact}: ${randomFact.description}`;
+        });
+    </script>
+</body>
+</html>
